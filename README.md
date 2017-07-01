@@ -1,6 +1,7 @@
+Trying out styled-components
+
 # Dev Notes
 https://stackoverflow.com/a/42996969 -> ex struct for styled comps
-Other interesting link in same answer: http://bradfrost.com/blog/post/atomic-web-design/
 
 ```
 src
@@ -23,7 +24,7 @@ src
 │   └── Icons
 ```
 
-# Boilerplate README
+# Boilerplate README from create-react-app
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
