@@ -1,3 +1,30 @@
+# Dev Notes
+https://stackoverflow.com/a/42996969 -> ex struct for styled comps
+Other interesting link in same answer: http://bradfrost.com/blog/post/atomic-web-design/
+
+```
+src
+├── App
+│   ├── Header
+│   │   ├── Logo.js    
+│   │   ├── Title.js   
+│   │   ├── Subtitle.js
+│   │   └── index.js
+│   └── Footer
+│       ├── List.js
+│       ├── ListItem.js
+│       ├── Wrapper.js
+│       └── index.js
+├── shared
+│   ├── Button.js
+│   ├── Card.js
+│   ├── InfiniteList.js
+│   ├── EmojiPicker
+│   └── Icons
+```
+
+# Boilerplate README
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
