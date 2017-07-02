@@ -5,6 +5,19 @@ import Header from './Header'
 import Intro from './Intro'
 import Logo from './Logo'
 
+import { fetchData } from 'api'
+
+fetchData()
+  .then(
+    ({ data }) => console.log(data)
+  )
+
+fetchData({ forceFail: true })
+  .then(
+    ({ error }) => console.log(error)
+  )
+
+
 const App = () =>
   <Container>
     <Header>
