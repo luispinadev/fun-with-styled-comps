@@ -8,7 +8,7 @@ module.exports = {
     "browser": true
   },
 
-  // "parser": "babel-eslint",
+  "parser": "babel-eslint",
 
   "parserOptions": {
     "ecmaVersion": 7,
@@ -20,17 +20,18 @@ module.exports = {
   },
 
   "plugins": [
-    //  "babel",
+     "babel",
      "react",
      "import"
   ],
 
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "react-app"],
 
   "rules" : {
     "no-console": [ "warn", { "allow": ["error", "warn"] } ],
     "max-len": ["error", 80, { "ignoreComments": true }],
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "no-sequences": 0
   },
 
   "globals": {

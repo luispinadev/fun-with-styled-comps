@@ -1,10 +1,11 @@
-import data from './data.json'
-/*
-  Dummy API
-*/
+import v4 from 'uuid/v4'
+import sampleSize from 'lodash/fp/sampleSize'
+
+import SAMPLE_DATA from './data.json'
+// Data from http://api.flutrack.org/?s=feverANDcoughORfever
 
 /*
-  In reality we would use something like this:
+  In reality we would use something closer to this:
 
   const HOST_URL = 'http://localhost:3000'
 
@@ -17,8 +18,14 @@ import data from './data.json'
       .catch(error => ({ error }))
 */
 
-// Data from http://api.flutrack.org/?s=feverANDcoughORfever
-export const fetchData = ({ forceFail = false } = {}) =>
-  (forceFail ? Promise.reject('Forced fail') : Promise.resolve(data))
-    .then( data => ({ data }) )
-    .catch( error => ({ error }) )
+// gnerate some unique IDs
+const DATA_WITH_IDS = SAMPLE_DATA.map(item => ({ ...item, id: v4() }))
+
+// Return a random sample of the dummy data
+export const fetchData = ({ forceFail = false, size = 5 } = {}) =>
+  (forceFail
+    ? Promise.reject('Forced fail')
+    : Promise.resolve(sampleSize(size, DATA_WITH_IDS))
+  )
+  .then(result => ({ data: result }))
+  .catch(error => ({ error }))
